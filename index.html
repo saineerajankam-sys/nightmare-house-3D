@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIGHTMARE HOUSE</title>
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(#252525, #050505 70%);
+    }
+    h1 {
+      color: #d60000;
+      font-size: clamp(2rem, 10vw, 4rem);
+      letter-spacing: 5px;
+      text-shadow: 0 0 20px #a00;
+    }
+    button {
+      padding: 15px 28px;
+      margin: 8px;
+      border: 1px solid #d60000;
+      background: #180000;
+      color: white;
+      border-radius: 8px;
+      font-size: 17px;
+    }
+    button:active { background: #700000; }
+    #status { color: #aaa; padding: 15px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>NIGHTMARE HOUSE</h1>
+    <p>Something is watching you...</p>
+    <button onclick="startGame('Solo')">PLAY SOLO</button>
+    <button onclick="startGame('Duo')">PLAY DUO</button>
+    <button onclick="startGame('Squad')">PLAY SQUAD (4)</button>
+    <p id="status">Choose your game mode.</p>
+  </main>
+  <script>
+    function startGame(mode) {
+      const status = document.getElementById('status');
+      if (mode === 'Solo') {
+        status.textContent = 'Solo mode selected. Your nightmare begins...';
+      } else {
+        status.textContent = mode +
+          ' selected. Multiplayer networking will be added next.';
+      }
+    }
+  </script>
+</body>
+</html>
